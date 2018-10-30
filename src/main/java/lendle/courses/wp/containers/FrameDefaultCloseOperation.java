@@ -5,6 +5,7 @@
  */
 package lendle.courses.wp.containers;
 
+import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import javax.swing.JFrame;
@@ -26,6 +27,13 @@ public class FrameDefaultCloseOperation {
         frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         //1. frame addWindowListener
         //2. add System.exit(0) to windowClosing
+        frame.addWindowFocusListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                System.exit(0); //To change body of generated methods, choose Tools | Templates.
+            }
+            
+});
         
         ////////////////////////////////////////
         
